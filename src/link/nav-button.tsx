@@ -11,8 +11,8 @@ export type NavButtonProps = {
 export default function NavButton(props: PropsWithChildren<NavButtonProps>) {
   const {
     to,
-    active = ButtonAppearance.outline,
-    appearance = ButtonAppearance.secondary,
+    active = ButtonAppearance.secondary,
+    appearance = ButtonAppearance.outline,
     ...rest
   } = props;
   const { pathname } = useLocation();

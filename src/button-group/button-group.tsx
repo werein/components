@@ -1,5 +1,6 @@
 import { useStyletron } from "baseui";
 import { SIZE } from "baseui/button";
+import { NavButton } from "..";
 import Button, {
   ButtonAppearance,
   ButtonProps,
@@ -14,6 +15,7 @@ export default function ButtonGroup(props: {
   appearance?: ButtonAppearance;
   size?: SIZE[keyof SIZE];
   outline?: boolean;
+  navigation?: boolean;
 }) {
   const [, theme] = useStyletron();
 
@@ -59,6 +61,24 @@ export default function ButtonGroup(props: {
     <>
       {props.buttons.map((prop, i) => {
         if (prop.to) {
+          if (props.navigation) {
+            return (
+              <NavButton
+                {...prop}
+                to={prop.to}
+                target={prop.target}
+                appearance={props.appearance || prop.appearance}
+                outline={props.outline || prop.outline}
+                size={props.size}
+                style={{
+                  ...prop.style,
+                  ...getBorderRadius(i),
+                  ...getBorderWidth(i),
+                }}
+              />
+            );
+          }
+
           return (
             <LinkButton
               {...prop}
