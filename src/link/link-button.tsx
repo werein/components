@@ -100,6 +100,7 @@ export default function LinkButton(props: PropsWithChildren<LinkButtonProps>) {
     display: "inline-flex",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "center",
     transitionTimingFunction: "cubic-bezier(0, 0, 1, 1)",
     transitionDuration: "200ms",
     transitionProperty: "background",
