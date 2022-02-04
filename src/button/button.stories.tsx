@@ -18,6 +18,7 @@ export default {
         ButtonAppearance.outline,
         ButtonAppearance.primary,
         ButtonAppearance.secondary,
+        ButtonAppearance.tertiary,
       ],
       control: { type: "radio" },
     },
@@ -34,7 +35,7 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Button",
   disabled: false,
-  isLoading: true,
+  isLoading: false,
 };
 
 export const Icon = Template.bind({});
@@ -43,4 +44,38 @@ Icon.args = {
   icon: <PlusCircle />,
   disabled: false,
   isLoading: false,
+};
+
+export const StartEnhancer = Template.bind({});
+StartEnhancer.args = {
+  children: "Button",
+  startEnhancer: <PlusCircle />,
+  disabled: false,
+  isLoading: false,
+};
+
+export const EndEnhancer = Template.bind({});
+EndEnhancer.args = {
+  children: "Button",
+  endEnhancer: <PlusCircle />,
+  disabled: false,
+  isLoading: false,
+};
+
+export const CustomWidth = Template.bind({});
+CustomWidth.args = {
+  children: "Button",
+  icon: <PlusCircle />,
+  disabled: false,
+  isLoading: false,
+  style: { width: "250px" },
+};
+
+export const CustomWidthStartEnhancer = Template.bind({});
+CustomWidthStartEnhancer.args = {
+  children: "Button",
+  startEnhancer: <PlusCircle />,
+  disabled: false,
+  isLoading: false,
+  style: { width: "250px" },
 };

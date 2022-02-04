@@ -9,6 +9,7 @@ export enum ButtonAppearance {
   minimal = "minimal",
   primary = "primary",
   secondary = "secondary",
+  tertiary = "tertiary",
   outline = "outline",
 }
 
@@ -29,9 +30,11 @@ export type ButtonProps = PropsWithChildren<{
   type?: "submit" | "button";
   icon?: ReactNode;
   overrides?: ButtonOverrides;
+  startEnhancer?: ReactNode;
+  endEnhancer?: ReactNode;
 }>;
 
-const Button = (props: ButtonProps) => {
+export default function Button(props: ButtonProps) {
   const [css, theme] = useStyletron();
 
   const { appearance, size, overrides = {}, style = {}, radius } = props;
@@ -47,6 +50,9 @@ const Button = (props: ButtonProps) => {
         {
           BaseButton: {
             style: () => ({
+              ...(props.startEnhancer || props.endEnhancer
+                ? { justifyContent: "space-between" }
+                : {}),
               ...(appearance === ButtonAppearance.outline
                 ? border({
                     style: "solid",
@@ -70,12 +76,14 @@ const Button = (props: ButtonProps) => {
       kind={kind}
       isLoading={props.isLoading}
       disabled={props.disabled}
+      startEnhancer={props.startEnhancer}
+      endEnhancer={props.endEnhancer}
     >
       {props.icon && (
         <span
           className={css(
             props.children
-              ? { marginRight: "0.5rem", lineHeight: 0 }
+              ? { marginRight: "12px", lineHeight: 0 }
               : { lineHeight: 0 }
           )}
         >
@@ -85,6 +93,4 @@ const Button = (props: ButtonProps) => {
       {props.children}
     </BaseButton>
   );
-};
-
-export default Button;
+}
