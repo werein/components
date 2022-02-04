@@ -1,0 +1,48 @@
+:root {
+  --font-color: rgba(0, 0, 0, 0.54);
+  --font-color-hover: rgba(0, 0, 0, 0.87);
+
+  --border-color: rgb(238, 238, 238);
+  --bg-color: rgb(255, 255, 255);
+
+  --black-80: rgba(0, 0, 0, 0.8);
+  --black-40: rgba(0, 0, 0, 0.4);
+  --black-50: rgba(0, 0, 0, 0.5);
+  --black-87: rgba(0, 0, 0, 0.87);
+  --black-30: rgba(0, 0, 0, 0.3);
+  --black-20: rgba(0, 0, 0, 0.2);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --black-05: rgba(0, 0, 0, 0.05);
+  --black-02: rgba(0, 0, 0, 0.02);
+
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --red: #f18c8e;
+  --orange: #f0b7a4;
+  --yellow: #f1d1b5;
+  --yellow-gold: #f5ab35;
+  --green: #1dbc60;
+  --blue: #568ea6;
+  --dark-blue: #305f72;
+  --light-gray: rgb(232, 232, 232);
+  --gray: rgb(228, 228, 228);
+  --font-light-gray: rgba(0, 0, 0, 0.54);
+  --font-dark-gray: rgba(0, 0, 0, 0.87);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+iframe#launcher {
+  display: none;
+}
