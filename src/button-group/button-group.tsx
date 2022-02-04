@@ -13,6 +13,7 @@ export default function ButtonGroup(props: {
   radius?: ButtonRadius;
   appearance?: ButtonAppearance;
   size?: SIZE[keyof SIZE];
+  outline?: boolean;
 }) {
   const [, theme] = useStyletron();
 
@@ -63,7 +64,8 @@ export default function ButtonGroup(props: {
               {...prop}
               to={prop.to}
               target={prop.target}
-              appearance={props.appearance}
+              appearance={props.appearance || prop.appearance}
+              outline={props.outline || prop.outline}
               size={props.size}
               style={{
                 ...prop.style,
@@ -77,7 +79,8 @@ export default function ButtonGroup(props: {
         return (
           <Button
             {...prop}
-            appearance={props.appearance}
+            appearance={props.appearance || prop.appearance}
+            outline={props.outline || prop.outline}
             size={props.size}
             style={{
               ...prop.style,

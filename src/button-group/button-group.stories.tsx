@@ -74,3 +74,13 @@ WithLinks.args = {
     { children: "Button 3" },
   ],
 };
+
+export const DifferentScheme = Template.bind({});
+DifferentScheme.args = {
+  outline: true,
+  buttons: [
+    { children: "Button", appearance: ButtonAppearance.outline },
+    { children: "Button 2", to: "#", appearance: ButtonAppearance.outline },
+    { children: "Button 3", appearance: ButtonAppearance.primary },
+  ],
+};

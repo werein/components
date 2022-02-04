@@ -32,12 +32,20 @@ export type ButtonProps = PropsWithChildren<{
   overrides?: ButtonOverrides;
   startEnhancer?: ReactNode;
   endEnhancer?: ReactNode;
+  outline?: boolean;
 }>;
 
 export default function Button(props: ButtonProps) {
   const [css, theme] = useStyletron();
 
-  const { appearance, size, overrides = {}, style = {}, radius } = props;
+  const {
+    appearance,
+    size,
+    overrides = {},
+    style = {},
+    radius,
+    outline,
+  } = props;
   const kind =
     props.appearance === ButtonAppearance.outline
       ? ButtonAppearance.minimal
@@ -53,7 +61,7 @@ export default function Button(props: ButtonProps) {
               ...(props.startEnhancer || props.endEnhancer
                 ? { justifyContent: "space-between" }
                 : {}),
-              ...(appearance === ButtonAppearance.outline
+              ...(appearance === ButtonAppearance.outline || outline
                 ? border({
                     style: "solid",
                     width: "2px",

@@ -79,3 +79,12 @@ CustomWidthStartEnhancer.args = {
   isLoading: false,
   style: { width: "250px" },
 };
+
+export const Outline = Template.bind({});
+Outline.args = {
+  children: "Button",
+  appearance: ButtonAppearance.primary,
+  outline: true,
+  disabled: false,
+  isLoading: false,
+};
