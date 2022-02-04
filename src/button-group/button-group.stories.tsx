@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { SIZE } from "baseui/button";
 import React from "react";
+import { MemoryRouter } from "react-router";
 import { ButtonAppearance, ButtonRadius } from "../button/button";
 import ButtonGroup from "./button-group";
 
@@ -29,7 +30,9 @@ export default {
 } as ComponentMeta<typeof ButtonGroup>;
 
 const Template: ComponentStory<typeof ButtonGroup> = (args) => (
-  <ButtonGroup {...args} />
+  <MemoryRouter>
+    <ButtonGroup {...args} />
+  </MemoryRouter>
 );
 
 export const Default = Template.bind({});
@@ -59,6 +62,15 @@ Long.args = {
   buttons: [
     { children: "Button" },
     { children: "Button 2" },
+    { children: "Button 3" },
+  ],
+};
+
+export const WithLinks = Template.bind({});
+WithLinks.args = {
+  buttons: [
+    { children: "Button" },
+    { children: "Button 2", to: "#" },
     { children: "Button 3" },
   ],
 };

@@ -5,10 +5,11 @@ import Button, {
   ButtonProps,
   ButtonRadius,
 } from "../button/button";
+import LinkButton from "../link/link-button";
 import { borderRadius } from "../utils/css";
 
 export default function ButtonGroup(props: {
-  buttons: Array<ButtonProps>;
+  buttons: Array<ButtonProps & { to?: string; target?: "_blank" }>;
   radius?: ButtonRadius;
   appearance?: ButtonAppearance;
   size?: SIZE[keyof SIZE];
@@ -56,6 +57,23 @@ export default function ButtonGroup(props: {
   return (
     <>
       {props.buttons.map((prop, i) => {
+        if (prop.to) {
+          return (
+            <LinkButton
+              {...prop}
+              to={prop.to}
+              target={prop.target}
+              appearance={props.appearance}
+              size={props.size}
+              style={{
+                ...prop.style,
+                ...getBorderRadius(i),
+                ...getBorderWidth(i),
+              }}
+            />
+          );
+        }
+
         return (
           <Button
             {...prop}
