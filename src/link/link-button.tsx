@@ -33,6 +33,14 @@ function styles(
           backgroundColor: theme.colors.buttonSecondaryHover,
         },
       };
+    case ButtonAppearance.tertiary:
+      return {
+        color: theme.colors.buttonTertiaryText,
+        backgroundColor: theme.colors.buttonTertiaryFill,
+        ":hover": {
+          backgroundColor: theme.colors.buttonTertiaryHover,
+        },
+      };
     case ButtonAppearance.minimal:
       return {
         color: theme.colors.buttonMinimalText,

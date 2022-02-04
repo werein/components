@@ -20,6 +20,7 @@ export default {
         ButtonAppearance.outline,
         ButtonAppearance.primary,
         ButtonAppearance.secondary,
+        ButtonAppearance.tertiary,
       ],
       control: { type: "radio" },
     },
